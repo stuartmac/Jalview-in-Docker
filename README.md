@@ -29,3 +29,16 @@ docker run -e DISPLAY=host.docker.internal:0 \
   -v $PWD:/data \
   --rm jalview-gui
 ```
+
+## Add Jalview to XQuartz Applications
+
+For easier access, you can add Jalview to the Applications menu in XQuartz:
+
+1. Open XQuartz and go to `Applications > Customize...`.
+2. Click the `+` button to add a new application.
+3. Set the following:
+   - **Name**: Jalview
+   - **Command**: `docker run -e DISPLAY=:0 -v ~:/data --rm jalview-gui`
+4. Click `Done` to save the changes.
+
+You can now launch Jalview directly from the XQuartz Applications menu.
