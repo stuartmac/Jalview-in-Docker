@@ -1,0 +1,16 @@
+FROM openjdk:8-slim
+
+# Install required libraries for Swing and X11
+RUN apt-get update && apt-get install -y \
+    libxext6 libxrender1 libxtst6 libxi6 libgtk2.0-0 \
+    && apt-get clean
+
+# Create test Swing app
+RUN echo 'public class SwingTest {' \
+         '  public static void main(String[] args) {' \
+         '    javax.swing.JOptionPane.showMessageDialog(null, "Hello from Swing!");' \
+         '  }' \
+         '}' > SwingTest.java && \
+    javac SwingTest.java
+
+CMD ["java", "SwingTest"]
