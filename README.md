@@ -30,6 +30,16 @@ docker run -e DISPLAY=host.docker.internal:0 \
   --rm jalview-gui
 ```
 
+## Integrating Jalview with a Slivka Stack
+
+This Docker setup is especially useful for integrating Jalview with a containerized Slivka service. By pre-configuring Jalview to connect to your running Slivka instance, you can:
+
+- Use Slivka-exposed tools directly within Jalview
+- Customise Jalview’s analysis capabilities by adding compatible tools to your Slivka container
+- Rapidly prototype and deploy new bioinformatics tools that are immediately accessible via Jalview’s GUI
+
+This integration is ideal for development environments where you want to test or share new Jalview-compatible services with minimal setup.
+
 ## Add Jalview to XQuartz Applications
 
 For easier access, you can add Jalview to the Applications menu in XQuartz:
